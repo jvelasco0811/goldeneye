@@ -7,7 +7,7 @@
     <body>
         <h1>New Employees Form</h1>
 
-        <form method="POST"> 
+        <form action="/api/v1/employee" method="POST"> 
         
             <label> Name:    <input type="text" name="name"> </label>
             </br></br>
@@ -15,7 +15,7 @@
             </br></br>
 
             <label for="office">Offices:</label>
-            <select name="offices" id="offices">
+            <select name="office" id="offices">
                 <option value="milan">Milan</option>
                 <option value="spain">Spain</option>
                 <option value="newyork">New York</option>
@@ -24,7 +24,7 @@
              </br></br>
 
             <label for="department">Departments:</label>
-            <select name="departments" id="departments">
+            <select name="department" id="departments">
                 <option value="design">Design</option>
                 <option value="business">Business</option>
                 <option value="advertising">Advertising</option>
