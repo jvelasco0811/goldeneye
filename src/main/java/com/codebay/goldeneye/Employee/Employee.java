@@ -50,7 +50,7 @@ public class Employee {
     }
 
     public String getEmail() {
-        return this.name + "." + this.surname + "@" + this.office + "." + this.department + ".com"; // this.email;
+        return genarateEmail(); // this.email;
     }
 
     public void setEmail(String email) {
@@ -66,6 +66,17 @@ public class Employee {
                 ", department='" + getDepartment() + "'" +
                 ", email='" + getEmail() + "'" +
                 "}";
+    }
+
+    public String genarateEmail() {
+        String domain = "goldeneye.com";
+        char f = this.name.toLowerCase().charAt(0);
+        String surn = this.surname.toLowerCase();
+        String dep = this.department.toLowerCase();
+        String off = this.office.toLowerCase();
+
+        String emailFormated = f + surn + "." + dep + "@" + off + "." + domain;
+        return emailFormated;
     }
 
 }
