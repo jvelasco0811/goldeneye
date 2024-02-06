@@ -1,4 +1,4 @@
-package com.codebay.goldeneye.Employee;
+package com.codebay.goldeneye.Employee.infrastructure;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,6 +9,5 @@ public class EmployeeFormController {
     @GetMapping("api/v1/employee/form")
     public String EmployeeForm() {
         return "employeeform";
-        // return "New employee created";
     }
 }

@@ -1,4 +1,4 @@
-package com.codebay.goldeneye.Employee;
+package com.codebay.goldeneye.Employee.domain;
 
 public class Employee {
     private String name;
