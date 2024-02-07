@@ -6,8 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.codebay.goldeneye.Employee.application.EmployeeWithEmailGenerator;
 import com.codebay.goldeneye.Employee.domain.Employee;
-
-import Shared.CustomError;
+import com.codebay.goldeneye.Shared.CustomError;
 
 @Controller
 public class EmployeePostController {
@@ -19,19 +18,16 @@ public class EmployeePostController {
     }
 
     @PostMapping(path = "api/v1/employee", consumes = "application/x-www-form-urlencoded")
-    public String genarateEmail(String name, String surname, String office, String department, Model model) {
+    public String genarateEmail(String name, String surname, String office, String department,
+            Model model) {
 
-        try {
+        Employee employee = employeeWithEmailGenerator.createEmployeeWithEmail(name,
+                surname, office, department);
 
-            Employee employee = employeeWithEmailGenerator.createEmployeeWithEmail(name, surname, office, department);
+        model.addAttribute("employee", employee);
 
-            model.addAttribute("employee", employee);
+        return "employeedata";
 
-            return "employeedata";
-
-        } catch (Exception e) {
-            throw new CustomError("name_invalid", "Name is required");
-        }
     }
 
 }

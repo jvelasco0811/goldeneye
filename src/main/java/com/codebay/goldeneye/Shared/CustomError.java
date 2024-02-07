@@ -1,4 +1,4 @@
-package Shared;
+package com.codebay.goldeneye.Shared;
 
 public class CustomError extends RuntimeException {
 
