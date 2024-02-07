@@ -5,13 +5,17 @@
         <title>Goldeneye</title>
     </head>
     <body>
-        <h1>New Employee Details</h1>
+        <h1>Employee Email Company</h1>
 
-        Name: ${employee.name}<br/>
+        <h3>${employee.email}</h3>
+
+        Employee Details<br/>
+        
+        Name: ${employee.name!"No name."}<br/>
         Surname: ${employee.surname}<br/>
         Office: ${employee.office}<br/>
         Deparment: ${employee.department}<br/>
-        Email: ${employee.email}<br/>
+        </p>
 
     </body>
 </html>
