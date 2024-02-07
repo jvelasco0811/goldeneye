@@ -53,7 +53,8 @@ public class Employee {
     private void createEmail() {
         String domain = "goldeneye.com";
         char f = this.name.toLowerCase().charAt(0);
-        String surn = this.surname.toLowerCase();
+        String surn = this.surname.toLowerCase().replaceAll("^\\s+|\\s+$",
+                "").replaceAll("[^a-zA-Z0-9]", "");
         String dep = this.department.toLowerCase().replaceAll("^\\s+|\\s+$",
                 "").replaceAll("[^a-zA-Z0-9]", "");
         String off = this.office.toLowerCase().replaceAll("^\\s+|\\s+$",
@@ -82,19 +83,23 @@ public class Employee {
         }
 
         if (name.length() < 2 || name.length() > 20) {
-            throw new CustomError("name_invalid", "Name cannot be longer than 20 characters");
+            throw new CustomError("name_invalid",
+                    "Name should be shorter than 20 characters or longer of 2 characters");
         }
 
         if (name.length() < 2 || surname.length() > 20) {
-            throw new CustomError("name_invalid", "Surname cannot be longer than 20 characters");
+            throw new CustomError("name_invalid",
+                    "Surname should be shorter than 20 characters or longer of 2 characters");
         }
 
-        if (office.length() > 20) {
-            throw new CustomError("office_invalid", "Office cannot be longer than 20 characters");
+        if (office.length() < 2 || office.length() > 20) {
+            throw new CustomError("office_invalid",
+                    "Office should be shorter than 20 characters or longer of 2 characters");
         }
 
-        if (department.length() > 20) {
-            throw new CustomError("department_invalid", "Department cannot be longer than 20 characters");
+        if (department.length() < 2 || department.length() > 35) {
+            throw new CustomError("department_invalid",
+                    "Department should be shorter than 35 characters or longer of 2 characters");
         }
 
     }
