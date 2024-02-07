@@ -9,6 +9,10 @@
 <body onload="updateOffice()">
     <script type="text/javascript">
     function updateOffice() {
+        let selectedOffice = document.getElementById("offices").value;
+        if (!selectedOffice) {
+            selectedOffice = "Milan";
+        }
         const offices = {
             Milan: ['Design', 'Business', 'Advertising'],
             Spain: ['Research & development', 'Business'],
@@ -16,18 +20,16 @@
         };
         const officeSelect = document.getElementById('offices');
         const departmentSelect = document.getElementById('departments');
-        officeSelect.addEventListener('change', () => {
-            // Clear existing options
-            departmentSelect.innerHTML = '';
-            // Get selected office
-            const selectedOffice = officeSelect.value;
-            // Add options for selected office's departments
-            offices[selectedOffice].forEach(department => {
-                const option = document.createElement('option');
-                option.value = department;
-                option.text = department;
-                departmentSelect.appendChild(option);
-            });
+        // Clear existing options
+        departmentSelect.innerHTML = '';
+        // Get selected office
+        selectedOffice = officeSelect.value;
+        // Add options for selected office's departments
+        offices[selectedOffice].forEach(department => {
+            const option = document.createElement('option');
+            option.value = department;
+            option.text = department;
+            departmentSelect.appendChild(option);
         });
     }
     </script>
@@ -52,7 +54,7 @@
                     </option>
                 </#list>
             </select> -->
-            <select id="offices" name="office">
+            <select id="offices" name="office" onchange=updateOffice()>
                 <option value="Milan">Milan</option>
                 <option value="Spain">Spain</option>
                 <option value="New York">New York</option>
