@@ -1,11 +1,5 @@
 package com.codebay.goldeneye.Employee.domain;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-
-import Shared.CustomError;
-import io.micrometer.core.instrument.config.validate.ValidationException;
-
 public class Employee {
 
     private String name;
@@ -63,15 +57,5 @@ public class Employee {
         String emailFormated = f + surn + "." + dep + "@" + off + "." + domain;
         this.email = emailFormated;
     }
-
-    // public void validate(String name) {
-
-    // if (name == null || name.isEmpty()) {
-
-    // throw new CustomError("name_invalid", "Name is required");
-
-    // }
-
-    // }
 
 }
