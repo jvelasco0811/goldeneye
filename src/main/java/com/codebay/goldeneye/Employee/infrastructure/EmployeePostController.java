@@ -1,9 +1,10 @@
 package com.codebay.goldeneye.Employee.infrastructure;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.codebay.goldeneye.Employee.application.EmployeeEmailGenerator;
+import com.codebay.goldeneye.Employee.application.EmployeeWithEmailGenerator;
 import com.codebay.goldeneye.Employee.domain.Employee;
 
 import Shared.CustomError;
@@ -11,18 +12,20 @@ import Shared.CustomError;
 @Controller
 public class EmployeePostController {
 
-    private final EmployeeEmailGenerator employeeEmailGenerator;
+    private final EmployeeWithEmailGenerator employeeWithEmailGenerator;
 
-    public EmployeePostController(EmployeeEmailGenerator employeeEmailGenerator) {
-        this.employeeEmailGenerator = employeeEmailGenerator;
+    public EmployeePostController(EmployeeWithEmailGenerator employeeWithEmailGenerator) {
+        this.employeeWithEmailGenerator = employeeWithEmailGenerator;
     }
 
     @PostMapping(path = "api/v1/employee", consumes = "application/x-www-form-urlencoded")
-    public String genarateEmail(Employee employee) {
+    public String genarateEmail(String name, String surname, String office, String department, Model model) {
 
         try {
 
-            employeeEmailGenerator.generateEmail(employee);
+            Employee employee = employeeWithEmailGenerator.createEmployeeWithEmail(name, surname, office, department);
+
+            model.addAttribute("employee", employee);
 
             return "employeedata";
 

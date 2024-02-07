@@ -39,28 +39,13 @@
         </br></br>
         <label> Surname: <input type="text" name="surname"> </label>
         </br></br>
-        <#-- <select id="offices" name="office" onchange="updateOffice()">
-            <#list offices?keys as office>
-                <option value=" ${office}">
-                    ${office}
-                </option>
-            </#list>
-            </select>
-            <select id="departments" name="department">
-                <#list offices[selectedOffice]
-                    as department>
-                    <option>
-                        ${department}
-                    </option>
-                </#list>
-            </select> -->
-            <select id="offices" name="office" onchange=updateOffice()>
-                <option value="Milan">Milan</option>
-                <option value="Spain">Spain</option>
-                <option value="New York">New York</option>
-            </select>
-            <select id="departments" name="department"></select>
-            <button type="submit">Submit</button>
+        <select id="offices" name="office" onchange=updateOffice()>
+            <option value="Milan">Milan</option>
+            <option value="Spain">Spain</option>
+            <option value="New York">New York</option>
+        </select>
+        <select id="departments" name="department"></select>
+        <button type="submit">Submit</button>
     </form>
 </body>
 

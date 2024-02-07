@@ -15,10 +15,6 @@ public class Employee {
     private String email;
 
     public Employee(String name, String surname, String office, String department) {
-        // if (name == null || name.isEmpty()) {
-        // throw new IllegalArgumentException("Name is required");
-        // }
-        // validate(name);
         this.name = name;
         this.surname = surname;
         this.office = office;
@@ -42,7 +38,7 @@ public class Employee {
     }
 
     public String getEmail() {
-        genarateEmail();
+        createEmail();
         return this.email;
     }
 
@@ -57,7 +53,7 @@ public class Employee {
                 "}";
     }
 
-    public String genarateEmail() {
+    public void createEmail() {
         String domain = "goldeneye.com";
         char f = this.name.toLowerCase().charAt(0);
         String surn = this.surname.toLowerCase();
@@ -65,17 +61,17 @@ public class Employee {
         String off = this.office.toLowerCase().replaceAll("^\\s+|\\s+$", "").replaceAll("[^a-zA-Z0-9]", "");
 
         String emailFormated = f + surn + "." + dep + "@" + off + "." + domain;
-        return this.email = emailFormated;
+        this.email = emailFormated;
     }
 
-    public void validate(String name) {
+    // public void validate(String name) {
 
-        if (name == null || name.isEmpty()) {
+    // if (name == null || name.isEmpty()) {
 
-            throw new CustomError("name_invalid", "Name is required");
+    // throw new CustomError("name_invalid", "Name is required");
 
-        }
+    // }
 
-    }
+    // }
 
 }
