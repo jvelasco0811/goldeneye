@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.codebay.goldeneye.Employee.application.EmployeeWithEmailGenerator;
 import com.codebay.goldeneye.Employee.domain.Employee;
-import com.codebay.goldeneye.Shared.CustomError;
 
 @Controller
 public class EmployeePostController {
