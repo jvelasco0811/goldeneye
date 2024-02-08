@@ -23,6 +23,6 @@ public class EmployeeFormControllerTest {
 
         mockMvc.perform(get("/api/v1/employee/form"))
                 .andExpect(status().isOk()) // Assert HTTP 200 status code
-                .andExpect(view().name("employeeform")); // Assert view name
+                .andExpect(view().name("employee_form")); // Assert view name
     }
 }

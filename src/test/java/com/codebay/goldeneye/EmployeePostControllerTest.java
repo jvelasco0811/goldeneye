@@ -43,7 +43,7 @@ public class EmployeePostControllerTest {
                 .param("office", "Engineering")
                 .param("department", "Development"))
                 .andExpect(status().isOk()) // Expect 200 OK status
-                .andExpect(view().name("employeedata")) // Expect the view name to be returned
+                .andExpect(view().name("employee_result")) // Expect the view name to be returned
                 .andExpect(model().attributeExists("employee")); // Expect model attribute "employee"
 
         // Verify service method was called once
