@@ -53,7 +53,7 @@
                 Email Generator <span class="text-indigo-600">Form</span>
             </h3>
         </div>
-        <form class="w-full">
+        <form class="w-full" action="/api/v1/employee" method="POST">
             <div class="flex flex-wrap -mx-3 mb-6">
                 <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
@@ -95,7 +95,7 @@
             <div class="flex flex-wrap -mx-3 mb-6">
                 <div class="flex justify-between w-full px-3">
                     <button class="shadow bg-indigo-600 hover:bg-indigo-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded" type="submit">
-                        Send Message
+                        Get Employee Email
                     </button>
                 </div>
             </div>

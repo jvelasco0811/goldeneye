@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class EmployeeFormController {
     @GetMapping("api/v1/employee/form")
     public String EmployeeForm(Model model) {
-        return "htmltemplate";
+        return "employee_form";
 
     }
 }

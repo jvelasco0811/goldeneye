@@ -25,7 +25,7 @@ public class EmployeePostController {
 
         model.addAttribute("employee", employee);
 
-        return "employeedata";
+        return "employee_result";
 
     }
 
