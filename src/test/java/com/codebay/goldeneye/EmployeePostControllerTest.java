@@ -27,7 +27,7 @@ public class EmployeePostControllerTest {
 
     @BeforeEach
     public void setup() {
-        // Mock the EmployeeWithEmailGenerator behavior as needed for your tests
+
         Employee mockedEmployee = new Employee("John", "Doe", "Engineering", "Development");
         when(employeeWithEmailGenerator.createEmployeeWithEmail(anyString(), anyString(), anyString(), anyString()))
                 .thenReturn(mockedEmployee);
@@ -35,7 +35,7 @@ public class EmployeePostControllerTest {
 
     @Test
     public void whenPostRequestToEmployeeAndValidUser_thenCorrectResponse() throws Exception {
-        // Perform POST request
+
         mockMvc.perform(post("/api/v1/employee")
                 .contentType("application/x-www-form-urlencoded")
                 .param("name", "John")

@@ -18,14 +18,9 @@ public class EmployeeFormControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @BeforeEach
-    void setUp() {
-        // Setup mock before each test if needed
-    }
-
     @Test
     void whenEmployeeFormRequested_thenReturnEmployeeFormView() throws Exception {
-        // Perform GET request
+
         mockMvc.perform(get("/api/v1/employee/form"))
                 .andExpect(status().isOk()) // Assert HTTP 200 status code
                 .andExpect(view().name("employeeform")); // Assert view name
