@@ -2,6 +2,7 @@ package com.codebay.goldeneye.Employee.infrastructure;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.codebay.goldeneye.Employee.application.EmployeeWithEmailGenerator;
@@ -20,12 +21,21 @@ public class EmployeePostController {
     public String genarateEmail(String name, String surname, String office, String department,
             Model model) {
 
-        Employee employee = employeeWithEmailGenerator.createEmployeeWithEmail(name,
-                surname, office, department);
+        String webEndpoint = "employee_result";
+        try {
+            Employee employee = employeeWithEmailGenerator.createEmployeeWithEmail(name,
+                    surname, office, department);
 
-        model.addAttribute("employee", employee);
+            model.addAttribute("hasErrors", false);
 
-        return "employee_result";
+            model.addAttribute("employee", employee);
+
+            webEndpoint = "employee_result";
+        } catch (Exception e) {
+            model.addAttribute("hasErrors", true);
+            webEndpoint = "employee_form";
+        }
+        return webEndpoint;
 
     }
 
