@@ -19,6 +19,7 @@ phases:
     commands:
       - echo Tagging the Docker image
       - docker tag $IMAGE_NAME:latest $ECR_REPO_URL/$IMAGE_NAME:latest
+      - echo $ECR_REPO_URL/$IMAGE_NAME:latest
       - echo Pushing the Docker image to Amazon ECR
       - docker push $ECR_REPO_URL/$IMAGE_NAME:latest
 
