@@ -66,19 +66,19 @@ public class Employee {
 
     private void validate(String name, String surname, String office, String department) {
 
-        if (name == null || name.isBlank()) {
+        if (name == null || name.isEmpty()) {
             throw new CustomError("name_invalid", "Name cannot be null or blank");
         }
 
-        if (surname == null || surname.isBlank()) {
+        if (surname == null || surname.isEmpty()) {
             throw new CustomError("surname_invalid", "Surname cannot be null or blank");
         }
 
-        if (office == null || office.isBlank()) {
+        if (office == null || office.isEmpty()) {
             throw new CustomError("office_invalid", "Office cannot be null or blank");
         }
 
-        if (department == null || department.isBlank()) {
+        if (department == null || department.isEmpty()) {
             throw new CustomError("department_invalid", "Department cannot be null or blank");
         }
 
